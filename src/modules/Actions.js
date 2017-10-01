@@ -25,11 +25,19 @@ class Actions extends Component {
 
 
   render() {
-    let link = this.props.action === "Try Again" ? <a href="http://www.cynthiadsuwito.com/"><button>Go to cynthiadsuwito.com</button></a> : null;
+    let link = this.props.action === "Try Again" ?
+      <a href="http://www.cynthiadsuwito.com/">
+        <button 
+        className="button button-outline"
+        style={{marginLeft:"1rem"}}
+        >Go to cynthiadsuwito.com</button>
+      </a> : null;
     return (
-      <section className="hb-actions">
-        <button onClick={() => this.handleTimer()}>{this.props.action}</button>
+      <section className="column column-100">
+        <div className="hb-actions">
+        <button className="button button-outline" onClick={() => this.handleTimer()}>{this.props.action}</button>
         {link}
+        </div> 
       </section>
     );
   }

@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 
 class Header extends Component {
 
+createMarkup(e) {
+    return {__html: e};
+  }
+
   render() {
     return (
-        <header className="hb-header">
-          <h4>{this.state.header_text}</h4>
-        </header>
-        );
+      <header style={{minHeight:"150px"}} className="hb-header column column-100">
+        <span onClick={this.props.popUp}style={{ float: "right" }}>
+          <i className="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
+        </span>
+
+        <h4 style={{margin:"6rem 0px 1rem 0px"}} dangerouslySetInnerHTML={this.createMarkup(this.props.header_text)} />
+      </header>
+    );
   }
 }
 

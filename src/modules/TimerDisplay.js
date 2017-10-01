@@ -14,14 +14,19 @@ class TimeDisplay extends Component {
 
     if (this.props.displayTime) {
       return (
-        <section className="hb-display">
+        <section className="column column-100">
+          
+          <div className="hb-display">
           <h1>{this.props.timer}</h1> <h3 style={unitStyle}>{this.props.timer_unit}</h3>
+          </div>
         </section>
       );
     } else {
       return (
-        <section className="hb-display">
+        <section className="column column-100">
+          <div className="hb-display">
           <h3 style={waitingTextStyle}>holding breath...</h3>
+          </div>
         </section>
 
       );
