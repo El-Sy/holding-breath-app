@@ -105,7 +105,7 @@ class App extends Component {
             displayTime={this.state.displayTime}
           />
         </main>
-        <footer className="row">
+        <footer className="hb-header row">
           <Actions
             startTimer={() => this.handleStartTimer()}
             stopTimer={() => this.handleStopTimer()}

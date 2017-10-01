@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 const unitStyle = {
-  paddingLeft: "1rem"
+  paddingLeft: "1rem",
+  marginBottom:"20px"
 }
 
 const waitingTextStyle = {
-  color: "lightgray"
+  color: "lightgray",
+  marginBottom:"20px"
 }
 
 class TimeDisplay extends Component {
@@ -17,7 +19,7 @@ class TimeDisplay extends Component {
         <section className="column column-100">
           
           <div className="hb-display">
-          <h1>{this.props.timer}</h1> <h3 style={unitStyle}>{this.props.timer_unit}</h3>
+          <h3 style={{fontFamily:"Roboto",fontSize:"40px", marginBottom:"15px"}}>{this.props.timer}</h3> <h3 style={unitStyle}>{this.props.timer_unit}</h3>
           </div>
         </section>
       );

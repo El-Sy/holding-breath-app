@@ -28,7 +28,7 @@
 }
 
 .hb-header{
-  padding:2rem 0px;
+  padding:2rem 0px !important;
 }
 .hb-body{
   padding:2rem 0px;
@@ -37,9 +37,8 @@
 .hb-display{
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
-  
-
+  min-height: 80px;
 }

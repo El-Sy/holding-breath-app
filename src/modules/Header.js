@@ -8,7 +8,7 @@ createMarkup(e) {
 
   render() {
     return (
-      <header style={{minHeight:"150px"}} className="hb-header column column-100">
+      <header style={{minHeight:"200px"}} className="hb-header column column-100">
         <span onClick={this.props.popUp}style={{ float: "right" }}>
           <i className="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
         </span>
