@@ -4,7 +4,8 @@ const PopUpStyle = {
   position: "absolute",
   top: "0",
   left: "0",
-  zIndex: "1030"
+  zIndex: "1030",
+  height:window.innerHeight
 
 }
 
@@ -17,17 +18,13 @@ const PopUpInnerStyle = {
   borderRadius: "1rem"
 }
 
-
 class PopUp extends Component {
 
   handleOnClick(e) {
-    console.log("e.target", e.target)
     const popup = document.getElementById("popup")
-    console.log("popup", popup)
     if (!popup.contains(e.target)) {
       this.props.close();
     }
-    // this.props.close();
   }
 
   createMarkup(e) {

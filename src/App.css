@@ -2,34 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .hb-header{
   padding:2rem 0px !important;
 }
+
 .hb-body{
   padding:2rem 0px;
 }
@@ -41,4 +17,50 @@
   justify-content: center;
   text-align: center;
   min-height: 80px;
+}
+
+.button.button-outline:focus, .button.button-outline:hover, button.button-outline:focus, button.button-outline:hover, input[type=button].button-outline:focus, input[type=button].button-outline:hover, input[type=reset].button-outline:focus, input[type=reset].button-outline:hover, input[type=submit].button-outline:focus, input[type=submit].button-outline:hover {
+  background-color: transparent;
+  border-color: #9b4dca !important;
+  color:  #9b4dca !important;
+}
+
+.fade-enter {
+  opacity: 0.01 ;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1 ;
+  transition: opacity 400ms ease-in ;
+}
+
+.fade-exit {
+  opacity: 1 ;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01 ;
+  transition: opacity 4000ms ease-in;
+}
+
+
+/* quickFade */
+
+
+.quickFade-enter {
+  opacity: 0.01;
+}
+
+.quickFade-enter.quickFade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.quickFade-exit {
+  opacity: 1;
+}
+
+.quickFade-exit.quickFade-exit-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-in;
 }

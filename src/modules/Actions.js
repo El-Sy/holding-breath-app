@@ -33,7 +33,7 @@ class Actions extends Component {
         >Go to cynthiadsuwito.com</button>
       </a> : null;
     return (
-      <section className="column column-100">
+      <section className="column column-100" style={{marginTop:"100px"}}>
         <div className="hb-actions">
         <button className="button button-outline" onClick={() => this.handleTimer()}>{this.props.action}</button>
         {link}
