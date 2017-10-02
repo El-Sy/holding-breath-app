@@ -30,7 +30,7 @@ class TimeDisplay extends Component {
       </div>
 
       return (
-        <section className="column column-100">
+        <section>
           {timer_display}
         </section>
       );

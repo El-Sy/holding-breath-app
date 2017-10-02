@@ -17,12 +17,12 @@ let timer;
 let timeOut;
 let transitionTime;
 let transitionTime2;
-let short_time = 400;
-let medium_time = 1000;
+let short_time = 600;
+let medium_time = 1800;
 let long_time = 4000;
 
 let init = {
-  header_text: "Take a deep breath first.<br />When you are ready, press start",
+  header_text: "Take a deep breath first.<br />When you are ready,<br/>hold your breath and<br/>press START",
   timer: 0,
   timer_unit: "seconds",
   action: "Start",
@@ -32,6 +32,11 @@ let init = {
   showTimer: true,
   class: "quickFade",
   timeout: short_time
+}
+
+const reset = () => {
+  document.getElementById("header").className = "row"
+  document.getElementById("main").className = "row"
 }
 
 class App extends Component {
@@ -45,6 +50,9 @@ class App extends Component {
 
 
   handleStartTimer() {
+    reset();
+    console.log(document.getElementById("header").className)
+    console.log(document.getElementById("main").classList)
 
     clearTimeout(transitionTime);
     transitionTime = this.setState({
@@ -65,12 +73,16 @@ class App extends Component {
         displayTime: false,
         showHeader: true,
         showTimer: true,
-        timeout: short_time
+        timeout: medium_time
       });
     }, long_time);
   }
 
   handleStopTimer() {
+    reset();
+    console.log(document.getElementById("header").className)
+    console.log(document.getElementById("main").classList)
+
     clearInterval(timer);
     clearTimeout(timeOut);
     clearTimeout(transitionTime);
@@ -94,13 +106,17 @@ class App extends Component {
   }
 
   handleCalculateO2Saved() {
+    reset();
+    console.log(document.getElementById("header").className)
+    console.log(document.getElementById("main").classList)
+
     clearTimeout(transitionTime);
     this.setState({
       showHeader: false,
       showTimer: false,
       timeout: medium_time
     });
-    
+
     // show divided text first and add time delay for timer
 
     let divided_num = this.state.timer * 1000000000 / 7500000000;
@@ -128,6 +144,9 @@ class App extends Component {
   }
 
   handleTryAgain() {
+    reset();
+    console.log(document.getElementById("header").className)
+
     clearTimeout(transitionTime);
     clearTimeout(transitionTime2);
     this.setState({
@@ -148,6 +167,8 @@ class App extends Component {
 
   render() {
     let popup = this.state.showPopUp ? <PopUp close={() => { this.handlePopUp() }} /> : null;
+    let time_saved = this.state.timer_unit === "nanoseconds" ?
+      <h4 style={{margin:"0px"}}>of oxygen for every single <br />person on earth</h4> : null;
     return (
       <div className="App container" style={{ position: "relative", height: window.innerHeight }}>
 
@@ -160,9 +181,11 @@ class App extends Component {
           class={this.state.class}
           in={this.state.showHeader}
         >
-          <Header
-            header_text={this.state.header_text}
-          />
+          <header id="header" className="row">
+            <Header
+              header_text={this.state.header_text}
+            />
+          </header>
         </Fade>
 
         <Fade
@@ -170,16 +193,21 @@ class App extends Component {
           class={this.state.class}
           in={this.state.showTimer}
         >
-          <main id="main" className="hb-body row">
-            <TimerDisplay
-              timer={this.state.timer}
-              timer_unit={this.state.timer_unit}
-              displayTime={this.state.displayTime}
-            />
+          <main id="main" className="row" style={{ padding:"2rem 0px 0px 0px",minHeight: "170px" }}>
+            
+              <div className="column column-100">
+                <TimerDisplay
+                  timer={this.state.timer}
+                  timer_unit={this.state.timer_unit}
+                  displayTime={this.state.displayTime}
+                />
+                {time_saved}
+            
+            </div>
           </main>
         </Fade>
 
-        <footer className="hb-header row" style={{ minHeight: "250px" }}>
+        <footer className="hb-header row" style={{ minHeight: "150px" }}>
           <Actions
             startTimer={() => this.handleStartTimer()}
             stopTimer={() => this.handleStopTimer()}

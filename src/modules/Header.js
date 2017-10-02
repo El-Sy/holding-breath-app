@@ -8,9 +8,9 @@ createMarkup(e) {
 
   render() {
     return (
-      <header id="header" style={{minHeight:"300px"}} className="hb-header column column-100">
-        <h4 style={{margin:"80px 0px 1rem 0px"}} dangerouslySetInnerHTML={this.createMarkup(this.props.header_text)} />
-      </header>
+      <div style={{minHeight:"210px"}} className="hb-header column column-100">
+        <h4 style={{margin:"40px 0px 0px 0px"}} dangerouslySetInnerHTML={this.createMarkup(this.props.header_text)} />
+      </div>
     );
   }
 }

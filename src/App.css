@@ -7,7 +7,8 @@
 }
 
 .hb-body{
-  padding:2rem 0px;
+  padding:2rem 0px 0px 0px;
+  
 }
 
 .hb-display{
@@ -16,7 +17,6 @@
   align-items: flex-end;
   justify-content: center;
   text-align: center;
-  min-height: 80px;
 }
 
 .button.button-outline:focus, .button.button-outline:hover, button.button-outline:focus, button.button-outline:hover, input[type=button].button-outline:focus, input[type=button].button-outline:hover, input[type=reset].button-outline:focus, input[type=reset].button-outline:hover, input[type=submit].button-outline:focus, input[type=submit].button-outline:hover {
@@ -31,7 +31,7 @@
 
 .fade-enter.fade-enter-active {
   opacity: 1 ;
-  transition: opacity 400ms ease-in ;
+  transition: opacity 1000ms ease-in ;
 }
 
 .fade-exit {
@@ -53,7 +53,7 @@
 
 .quickFade-enter.quickFade-enter-active {
   opacity: 1;
-  transition: opacity 400ms ease-in;
+  transition: opacity 600ms ease-in;
 }
 
 .quickFade-exit {
@@ -62,5 +62,5 @@
 
 .quickFade-exit.quickFade-exit-active {
   opacity: 0.01;
-  transition: opacity 400ms ease-in;
+  transition: opacity 600ms ease-in;
 }
